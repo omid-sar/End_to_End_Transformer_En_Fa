@@ -6,9 +6,9 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.0"
 
-REPO_NAME = ""
+REPO_NAME = "End_to_End_Transformer_En_Fa"
 AUTHOR_USER_NAME = "omid-sar"
-SRC_REPO = ""
+SRC_REPO = "TransformerTranslateEnFa"
 AUTHOR_EMAIL = "mr.omid.sardari@gmail.com"
 
 

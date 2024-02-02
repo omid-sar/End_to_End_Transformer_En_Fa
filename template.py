@@ -33,7 +33,8 @@ list_of_files = [
     "app.py",  # For model serving/application interface
     "main.py",  # Main script to run the pipeline
     "Dockerfile",  # For containerization
-    "artifacts/.gitkeep",  # Placeholder for artifacts directory
+    "artifacts/.gitkeep",
+    "research/trials.ipynb", # Placeholder for artifacts directory
 ]
 
 # Create the files and directories

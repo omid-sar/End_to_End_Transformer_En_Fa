@@ -16,8 +16,7 @@ list_of_files = [
     f"src/{project_name}/components/model_training.py",
     f"src/{project_name}/components/model_evaluation.py",
     f"src/{project_name}/utils/__init__.py",
-    f"src/{project_name}/utils/data_utils.py",  # For data-related utility functions
-    f"src/{project_name}/utils/model_utils.py",  # For model-related utility functions
+    f"src/{project_name}/utils/common.py",  # For data-related utility functions
     f"src/{project_name}/logging/__init__.py",
     f"src/{project_name}/config/__init__.py",
     f"src/{project_name}/config/configuration.py",

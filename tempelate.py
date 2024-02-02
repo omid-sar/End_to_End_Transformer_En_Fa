@@ -28,11 +28,6 @@ list_of_files = [
     f"src/{project_name}/pipeline/model_evaluation.py",  # For model evaluation processes
     f"src/{project_name}/entity/__init__.py",
     f"src/{project_name}/models/__init__.py",  # For model definitions
-    f"src/{project_name}/models/components.py",  # Basic building blocks of the Transformer model
-    f"src/{project_name}/models/multi_head_attention.py",  # Multi-head attention mechanism
-    f"src/{project_name}/models/encoder_decoder.py",  # Encoder and Decoder blocks
-    f"src/{project_name}/models/transformer.py",  # The overall Transformer model
-    f"src/{project_name}/models/utils.py",  # Utility functions for model building
     f"src/{project_name}/constants/__init__.py",
     "config/config.yml",
     "params.yml",

@@ -27,7 +27,6 @@ dependencies:
   - altair=5.1.1
   - wandb=0.15.9
   - pip:
-      - openai
       - python-dotenv
       - langchain
       - docarray
@@ -36,6 +35,10 @@ dependencies:
       - transformers
       - datasets
       - tensorboard
+      - fastapi==0.108.0
+      - uvicorn==0.25.0
+      - orjson==3.9.10
+      - huggingface-hub==0.20.1
 
 # For M1 Macs, use PyTorch's special build
 platforms:

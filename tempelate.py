@@ -34,43 +34,14 @@ list_of_files = [
     f"src/{project_name}/models/transformer.py",  # The overall Transformer model
     f"src/{project_name}/models/utils.py",  # Utility functions for model building
     f"src/{project_name}/constants/__init__.py",
-    f"src/{project_name}/data/__init__.py",
-    f"src/{project_name}/data/datasets.py",  # For dataset classes like BilingualDataset
     "config/config.yml",
     "params.yml",
     "app.py",  # For model serving/application interface
     "main.py",  # Main script to run the pipeline
     "Dockerfile",  # For containerization
-    "requirements.txt",  # Project dependencies
-    "setup.py",  # Setup script for the project
-    "research/trials.ipynb",  # For experimental notebooks
-    "tests/__init__.py",  # For unit tests
-    "tests/test_model.py",  # Test cases for the model
     "artifacts/.gitkeep",  # Placeholder for artifacts directory
 ]
 
-list_of_files = [
-    "github/workflows/.gitkeep",
-    f"src/{project_name}__init__.py",
-    f"src/{project_name}/components/__init__.py",
-    f"src/{project_name}/utils/__init__.py",
-    f"src/{project_name}/utils/common.py",
-    f"src/{project_name}/logging/__init__.py",
-    f"src/{project_name}/config/__init__.py",
-    f"src/{project_name}/config/configuration.py",
-    f"src/{project_name}/pipeline/__init__.py",
-    f"src/{project_name}/entity/__init__.py",
-    f"src/{project_name}/constants/__init__.py",
-    #f"src/{project_name}/models/__init__.py",
-    #f"src/{project_name}/models/transformer.py",
-
-    "config/config.yml",
-    "params.yml",
-    "app.py",
-    "main.py",
-    "Dockerfile",
-    "research/trials.ipynb",
-]
 # Create the files and directories
 for filepath in list_of_files:
     filedir, filename = os.path.split(filepath)

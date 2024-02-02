@@ -6,7 +6,7 @@ logging.basicConfig(
     level=logging.INFO, format="[%(asctime)s]: %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
 )
 
-project_name = ""
+project_name = "transformerEnFa"
 list_of_files = [
     "github/workflows/.gitkeep",
     f"src/{project_name}/__init__.py",

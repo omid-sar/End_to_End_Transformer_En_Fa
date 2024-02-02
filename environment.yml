@@ -28,7 +28,6 @@ dependencies:
   - wandb=0.15.9
   - pip:
       - python-dotenv
-      - -e .
       - langchain
       - docarray
       - tiktoken

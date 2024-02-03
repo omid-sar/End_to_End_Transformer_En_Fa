@@ -1,7 +1,0 @@
-artifacts_root: artifacts
-
-data_ingestion:
-  root_dir: 
-  source_URL: 
-  local_data_file: 
-  unzip_dir: 

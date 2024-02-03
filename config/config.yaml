@@ -1,0 +1,6 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  dataset_name: "tep_en_fa_para"
+  local_data_file: artifacts/data_ingestion/data

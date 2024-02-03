@@ -28,8 +28,8 @@ list_of_files = [
     f"src/{project_name}/entity/__init__.py",
     f"src/{project_name}/models/__init__.py",  # For model definitions
     f"src/{project_name}/constants/__init__.py",
-    "config/config.yml",
-    "params.yml",
+    "config/config.yaml",
+    "params.yaml",
     "app.py",  # For model serving/application interface
     "main.py",  # Main script to run the pipeline
     "Dockerfile",  # For containerization

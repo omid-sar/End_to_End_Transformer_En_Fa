@@ -12,7 +12,8 @@ list_of_files = [
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py",
     f"src/{project_name}/components/data_ingestion.py",
-    f"src/{project_name}/components/data_preprocessing.py",
+    f"src/{project_name}/components/data_validation.py",
+    f"src/{project_name}/components/data_transformation.py"
     f"src/{project_name}/components/model_training.py",
     f"src/{project_name}/components/model_evaluation.py",
     f"src/{project_name}/utils/__init__.py",
@@ -21,10 +22,11 @@ list_of_files = [
     f"src/{project_name}/config/__init__.py",
     f"src/{project_name}/config/configuration.py",
     f"src/{project_name}/pipeline/__init__.py",
-    f"src/{project_name}/pipeline/data_ingestion.py",  # For data ingestion processes
-    f"src/{project_name}/pipeline/data_preprocessing.py",  # For data preprocessing steps
-    f"src/{project_name}/pipeline/model_training.py",  # For model training processes
-    f"src/{project_name}/pipeline/model_evaluation.py",  # For model evaluation processes
+    f"src/{project_name}/pipeline/stage_1_data_ingestion.py", 
+    f"src/{project_name}/pipeline/stage_2_data_validation.py"
+    f"src/{project_name}/pipeline/stage_3_data_transformation.py",  
+    f"src/{project_name}/pipeline/stage_4_model_training.py",  
+    f"src/{project_name}/pipeline/stage_5_model_evaluation.py",  
     f"src/{project_name}/entity/__init__.py",
     f"src/{project_name}/models/__init__.py",  # For model definitions
     f"src/{project_name}/constants/__init__.py",

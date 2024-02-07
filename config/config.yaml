@@ -1,5 +1,6 @@
 artifacts_root: artifacts
 
+
 data_ingestion:
   root_dir: artifacts/data_ingestion
   dataset_name: "tep_en_fa_para"
@@ -9,3 +10,19 @@ data_validation:
   root_dir: artifacts/data_validation
   STATUS_FILE: artifacts/data_validation/status.txt
   ALL_REQUIRED_FILES: ["ds_raw.csv"]
+
+model_config:
+  root_dir: artifacts/model_config
+  verification_info_dir: artifacts/model_config/verification_info
+  verification_summary_file: verification_model_summary.txt
+  verification_weights_file: verification_initial_weights.pt
+  src_vocab_size: 10000
+  tgt_vocab_size: 10000
+  src_seq_len: 50
+  tgt_seq_len: 50
+  d_model: 512
+  N: 6
+  h: 8
+  dropout: 0.1
+  d_ff: 2048
+

@@ -97,9 +97,8 @@ This organization ensures that each part of your Transformer model and related f
 │   │   ├── config
 │   │   │   ├── __init__.py
 │   │   │   └── configuration.py
-│   │   │       ├── get_config
-│   │   │       ├── get_weights_file_path
-│   │   │       └── latest_weights_file_path
+│   │   │       ├── ConfigurationManager     
+│   │   │       
 │   │   ├── entity
 │   │   │   └── __init__.py
 │   │   ├── logging
@@ -123,7 +122,10 @@ This organization ensures that each part of your Transformer model and related f
 │   │   │   │   ├── Transformer
 │   │   │   │   └── ProjectionLayer
 │   │   │   └── utils.py
-│   │   │       └── build_transformer
+│   │   │   |     └── build_transformer
+|   |   │   └── common.py
+|   |   │   │       |── get_weights_file_path
+|   |   │   │       └── latest_weights_file_path
 │   │   ├── pipeline
 │   │   │   ├── __init__.py
 │   │   │   ├── stage_01_data_ingestion.py

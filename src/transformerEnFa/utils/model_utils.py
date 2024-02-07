@@ -1,5 +1,6 @@
-
 from pathlib import Path
+import torch
+
 from transformerEnFa.logging import logger
 
 
@@ -25,3 +26,32 @@ def latest_weights_file_path(config):
     logger.info(f"Latest weights file found: {latest_file}")
     return latest_file
 
+
+
+def save_model_summary(model, file_path, input_size, device='cpu'):
+    """
+    Saves the model summary to a file.
+    """
+    original_device = next(model.parameters()).device
+    model.to(device)
+
+    try:
+        with open(file_path, 'w') as f:
+            # Here you would generate the model summary.
+            # For now, we're just simulating this by writing a placeholder string.
+            f.write("Model summary placeholder")
+        logger.info(f"Model summary saved to {file_path}")
+    except Exception as e:
+        logger.error(f"Failed to save model summary: {e}")
+    finally:
+        model.to(original_device)
+
+def save_initial_weights(model, file_path):
+    """
+    Saves the initial weights of the model.
+    """
+    try:
+        torch.save(model.state_dict(), file_path)
+        logger.info(f"Model initial weights saved to {file_path}")
+    except Exception as e:
+        logger.error(f"Failed to save initial weights: {e}")

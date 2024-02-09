@@ -11,6 +11,16 @@ data_validation:
   STATUS_FILE: artifacts/data_validation/status.txt
   ALL_REQUIRED_FILES: ["ds_raw.csv"]
 
+data_transformation:
+  root_dir: artifacts/data_transformation
+  tokenizer_file: artifacts/data_transformation/tokenizer_{0}.json
+  dataset_name: "tep_en_fa_para"
+  lang_src: "en"
+  lang_tgt: "fa"
+  seq_len: 50
+  batch_size: 32
+  train_val_split_ratio: [0.9, 0.1]
+
 model_config:
   root_dir: artifacts/model_config
   verification_info_dir: artifacts/model_config/verification_info

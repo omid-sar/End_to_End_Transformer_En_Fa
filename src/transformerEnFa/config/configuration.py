@@ -2,8 +2,8 @@ from transformerEnFa.constants import *
 from transformerEnFa.utils.common import read_yaml, create_directories
 from transformerEnFa.entity import DataIngestionConfig
 from transformerEnFa.entity import DataValidationConfig
+from transformerEnFa.entity import DataTransformationConfig
 from transformerEnFa.entity import ModelConfig
-
 
 class ConfigurationManager:
     def __init__(
@@ -23,13 +23,14 @@ class ConfigurationManager:
         create_directories([config.root_dir])
 
         data_ingestion_config = DataIngestionConfig(
-            root_dir=config.root_dir,
-            dataset_name=config.dataset_name,
-            local_data_file=config.local_data_file
+            root_dir = config.root_dir,
+            dataset_name = config.dataset_name,
+            local_data_file = config.local_data_file
         )
 
         return data_ingestion_config
     
+
     def get_data_validation_config(self)-> DataValidationConfig:
         config = self.config.data_validation
 
@@ -43,6 +44,24 @@ class ConfigurationManager:
 
         return data_validation_config
     
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        return DataTransformationConfig(
+            root_dir = config.root_dir,
+            tokenizer_file = config.tokenizer_file,
+            dataset_name = config.dataset_name,
+
+            lang_src = config.lang_src,
+            lang_tgt = config.lang_tgt,
+            seq_len = config.seq_len,
+            batch_size = config.batch_size,
+            train_val_split_ratio = tuple(config.train_val_split_ratio),
+        )
+
     def get_model_config(self) -> ModelConfig:
         config = self.config.model_config
 

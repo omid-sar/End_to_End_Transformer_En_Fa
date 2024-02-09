@@ -1,6 +1,7 @@
 from transformerEnFa.logging import logger 
 from transformerEnFa.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from transformerEnFa.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
+from transformerEnFa.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
 from transformerEnFa.pipeline.stage_04_model_verification import ModelVerificationTrainingPipeline
 
 
@@ -26,6 +27,17 @@ except Exception as e:
     raise e 
 
 
+STAGE_NAME = "Data Transformation stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_transformation = DataTransformationTrainingPipeline()
+    data_transformation.get_ds()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e 
+
+
 STAGE_NAME = "Model Validation stage"
 try:
     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
@@ -35,3 +47,5 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e 
+
+

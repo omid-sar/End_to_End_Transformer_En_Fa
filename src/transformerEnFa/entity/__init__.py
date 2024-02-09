@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
-
+from typing import Tuple
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
@@ -13,6 +13,17 @@ class DataValidationConfig:
     root_dir: Path
     STATUS_FILE: str
     ALL_REQUIRED_FILES: list 
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    tokenizer_file: Path
+    dataset_name: str
+    lang_src: str
+    lang_tgt: str
+    seq_len: int
+    batch_size: int
+    train_val_split_ratio: Tuple[float, float]  
 
 @dataclass(frozen=True)
 class ModelConfig:

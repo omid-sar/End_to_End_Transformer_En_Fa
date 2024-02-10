@@ -4,17 +4,17 @@ artifacts_root: artifacts
 data_ingestion:
   root_dir: artifacts/data_ingestion
   dataset_name: "tep_en_fa_para"
-  local_data_file: artifacts/data_ingestion/data
+  local_data_file: artifacts/data_ingestion/data #split to %5
 
 data_validation:
   root_dir: artifacts/data_validation
   STATUS_FILE: artifacts/data_validation/status.txt
-  ALL_REQUIRED_FILES: ["ds_raw.csv"]
+  ALL_REQUIRED_FILES: ["state.json","dataset_info.json", "data-00000-of-00001.arrow" ] # should modify since 4 files saved 
 
 data_transformation:
   root_dir: artifacts/data_transformation
   tokenizer_file: artifacts/data_transformation/tokenizer_{0}.json
-  dataset_name: "tep_en_fa_para"
+  local_data_file: artifacts/data_ingestion/data 
   lang_src: "en"
   lang_tgt: "fa"
   seq_len: 50

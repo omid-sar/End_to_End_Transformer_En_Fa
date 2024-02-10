@@ -1,6 +1,7 @@
 
 import os
-from datasets import load_dataset 
+from pathlib import Path
+from datasets import load_dataset, load_from_disk
 from torch.utils.data import DataLoader,  random_split
 
 from transformerEnFa.logging import logger
@@ -25,8 +26,10 @@ class DataTransformationTrainingPipeline():
 
     def get_ds(self):
         # Load the dataset
-        ds_raw = load_dataset(self.config.dataset_name, split='train[:5%]')
-
+        #ds_raw = load_dataset(self.config.dataset_name, split='train[:5%]')
+        dataset_path = Path(self.config.local_data_file)
+        ds_raw = load_from_disk(dataset_path)
+        logger.info(f"Dataset loaded from {dataset_path}.")
         # Build tokenizers for source and target languages
         self.tokenizer_src = get_or_build_tokenizer(self.config, ds_raw, self.config.lang_src)
         self.tokenizer_tgt = get_or_build_tokenizer(self.config, ds_raw, self.config.lang_tgt)

@@ -18,7 +18,7 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     tokenizer_file: Path
-    dataset_name: str
+    local_data_file: Path
     lang_src: str
     lang_tgt: str
     seq_len: int

@@ -10,17 +10,12 @@ from transformerEnFa.entity import DataIngestionConfig
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):
         self.config = config
-
-
-    
+                   
     def download_file(self):
-        if not os.path.exists(self.config.local_data_file):
-            dataset = load_dataset(self.config.dataset_name)
-            os.makedirs(self.config.local_data_file, exist_ok=True)
-            # since the dataset only has train
-            dataset['train'].to_csv(os.path.join(self.config.local_data_file, "ds_raw.csv"))
-            logger.info(f"{self.config.dataset_name} download!")
+        dataset_path = Path(self.config.local_data_file)
+        if not dataset_path.exists():
+            dataset = load_dataset(self.config.dataset_name, split='train[:5%]')
+            dataset.save_to_disk(dataset_path)  
+            logger.info(f"{self.config.dataset_name} downloaded and saved to {dataset_path}!")
         else:
-            file_path = Path(self.config.local_data_file) / 'ds_raw.csv'
-            logger.info(f"File already exists of size: {get_size(file_path)}")
-           
+            logger.info(f"Dataset already exists at {dataset_path}. Size: {get_size(dataset_path)}")

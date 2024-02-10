@@ -53,8 +53,7 @@ class ConfigurationManager:
         return DataTransformationConfig(
             root_dir = config.root_dir,
             tokenizer_file = config.tokenizer_file,
-            dataset_name = config.dataset_name,
-
+            local_data_file = config.local_data_file,
             lang_src = config.lang_src,
             lang_tgt = config.lang_tgt,
             seq_len = config.seq_len,

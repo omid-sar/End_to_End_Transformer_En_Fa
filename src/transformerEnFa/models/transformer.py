@@ -39,8 +39,8 @@ class Transformer(nn.Module):
         return self.projection_layer(x)
 
 
-def built_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int, tgt_seq_len: int, d_model: int=512,
-                      N: int=6, h: int=8, dropout: float=0.1, d_ff: int=2048) -> Transformer:
+def built_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int, tgt_seq_len: int, d_model: int,
+                      N: int, h: int, dropout: float, d_ff: int) -> Transformer:
     
     # Create the embedding layers
     src_embed = InputEmbeddings(d_model, src_vocab_size)

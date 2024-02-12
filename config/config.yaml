@@ -26,8 +26,6 @@ model_config:
   verification_info_dir: artifacts/model_config/verification_info
   verification_summary_file: verification_model_summary.txt
   verification_weights_file: verification_initial_weights.pt
-  src_vocab_size: 10000
-  tgt_vocab_size: 10000
   src_seq_len: 50
   tgt_seq_len: 50
   d_model: 512
@@ -35,4 +33,13 @@ model_config:
   h: 8
   dropout: 0.1
   d_ff: 2048
+
+model_training:
+  root_dir: artifacts/model_training
+
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+
+
 

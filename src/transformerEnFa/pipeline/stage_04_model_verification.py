@@ -7,10 +7,17 @@ from transformerEnFa.utils.model_utils import save_model_summary, save_initial_w
 from transformerEnFa.logging import logger
 
 class ModelVerificationTrainingPipeline:
-    def __init__(self):
+    def __init__(self, tokenizer_src, tokenizer_tgt):
+
+        self.tokenizer_src = tokenizer_src
+        self.tokenizer_tgt = tokenizer_tgt
+        self.src_vocab_size = tokenizer_src.get_vocab_size()
+        self.tgt_vocab_size = tokenizer_tgt.get_vocab_size()
+
         self.config_manager = ConfigurationManager()
         self.config = self.config_manager.get_model_config()
         self.device = self.get_device()
+       
 
     def get_device(self):
         device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
@@ -28,8 +35,8 @@ class ModelVerificationTrainingPipeline:
         try:
             # Instantiate the model to check for syntax errors in initialization
             model = built_transformer(
-                src_vocab_size=self.config.src_vocab_size,
-                tgt_vocab_size=self.config.tgt_vocab_size,
+                src_vocab_size=self.src_vocab_size,
+                tgt_vocab_size=self.tgt_vocab_size,
                 src_seq_len=self.config.src_seq_len,
                 tgt_seq_len=self.config.tgt_seq_len,
                 d_model=self.config.d_model,
@@ -58,3 +65,5 @@ class ModelVerificationTrainingPipeline:
             input_size=(self.config.src_seq_len,),
             device=str(self.device)
         )
+        logger.info("Model and device setup complete.")
+        return model, self.device 

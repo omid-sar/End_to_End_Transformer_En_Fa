@@ -31,8 +31,6 @@ class ModelConfig:
     verification_info_dir: Path
     verification_summary_file: Path
     verification_weights_file: Path
-    src_vocab_size: int
-    tgt_vocab_size: int
     src_seq_len: int
     tgt_seq_len: int
     d_model: int
@@ -40,3 +38,7 @@ class ModelConfig:
     h: int
     dropout: float
     d_ff: int
+
+@dataclass(frozen=True)
+class ModelTrainingConfig:
+    root_dir: Path

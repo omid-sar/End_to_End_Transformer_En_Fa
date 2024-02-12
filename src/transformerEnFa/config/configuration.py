@@ -4,6 +4,7 @@ from transformerEnFa.entity import DataIngestionConfig
 from transformerEnFa.entity import DataValidationConfig
 from transformerEnFa.entity import DataTransformationConfig
 from transformerEnFa.entity import ModelConfig
+from transformerEnFa.entity import ModelTrainingConfig
 
 class ConfigurationManager:
     def __init__(
@@ -73,8 +74,6 @@ class ConfigurationManager:
             verification_info_dir = config.verification_info_dir,
             verification_summary_file = config.verification_summary_file, 
             verification_weights_file = config.verification_weights_file, 
-            src_vocab_size = config.src_vocab_size,
-            tgt_vocab_size = config.tgt_vocab_size,
             src_seq_len = config.src_seq_len,
             tgt_seq_len = config.tgt_seq_len,
             d_model = config.d_model,
@@ -84,3 +83,15 @@ class ConfigurationManager:
             d_ff = config.d_ff
         )
 
+    def get_model_training_config(self) -> ModelTrainingConfig:
+        config = self.config.data_ingestion
+
+        create_directories([config.root_dir])
+
+        data_ingestion_config = ModelTrainingConfig(
+            root_dir = config.root_dir,
+      
+        )
+
+        return data_ingestion_config
+    

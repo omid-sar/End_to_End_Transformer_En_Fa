@@ -84,14 +84,20 @@ class ConfigurationManager:
         )
 
     def get_model_training_config(self) -> ModelTrainingConfig:
-        config = self.config.data_ingestion
+        config = self.config.model_training
 
         create_directories([config.root_dir])
 
-        data_ingestion_config = ModelTrainingConfig(
+        model_training_config = ModelTrainingConfig(
             root_dir = config.root_dir,
-      
+            model_folder = config.model_folder,
+            model_basename = config.model_basename,
+            tensorboard_log_dir = config.tensorboard_log_dir,
+            lr = config.lr, 
+            preload = config.preload,
+            num_epochs = config.num_epochs,
+            
         )
 
-        return data_ingestion_config
+        return model_training_config
     

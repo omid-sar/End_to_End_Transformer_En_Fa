@@ -42,3 +42,9 @@ class ModelConfig:
 @dataclass(frozen=True)
 class ModelTrainingConfig:
     root_dir: Path
+    model_folder: Path
+    model_basename: str
+    tensorboard_log_dir: Path
+    lr: float
+    preload: str
+    num_epochs: int

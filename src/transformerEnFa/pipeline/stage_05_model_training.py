@@ -18,7 +18,7 @@ class ModelTrainingPipeline():
         self.device = device
 
         self.config = ConfigurationManager()
-        self.data_tranformation_config = self.config.get_model_training_config()
+        self.config = self.config.get_model_training_config()
 
     def main(self):
         train_model(
@@ -31,7 +31,6 @@ class ModelTrainingPipeline():
             device=self.device
             )
     
-   
 
 
 

@@ -36,10 +36,14 @@ model_config:
 
 model_training:
   root_dir: artifacts/model_training
-
+  model_folder: artifacts/model_training/model_en_fa_weights
+  model_basename: "tmodel_"
+  tensorboard_log_dir: logs
+  lr: 0.0001
+  preload:
+  num_epochs: 1 
 
 model_evaluation:
   root_dir: artifacts/model_evaluation
-
 
 

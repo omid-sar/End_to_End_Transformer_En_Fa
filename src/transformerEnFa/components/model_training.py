@@ -8,7 +8,7 @@ from torch.utils.tensorboard import SummaryWriter
 from transformerEnFa.logging import logger
 from transformerEnFa.utils.common import create_directories
 from transformerEnFa.utils.model_utils import get_weights_file_path, latest_weights_file_path
-#from transformerEnFa.components.model_evaluation import run_validation
+from transformerEnFa.components.model_evaluation import run_validation
 
 
 def train_model(config, train_dataloader, val_dataloader, tokenizer_src, tokenizer_tgt, model, device):
@@ -74,9 +74,10 @@ def train_model(config, train_dataloader, val_dataloader, tokenizer_src, tokeniz
                 optimizer.step()
                 optimizer.zero_grad(set_to_none=True)
 
-                #run_validation(model, val_dataloader, tokenizer_src, tokenizer_tgt, config['seq_len'], device, lambda msg: batch_iterator.write(msg), global_step, writer )
-
+        
                 global_step += 1
+
+            run_validation(model, val_dataloader, tokenizer_src, tokenizer_tgt, 50, device, lambda msg: batch_iterator.write(msg), global_step, writer )
             # Save the model at the end of every epoch
             model_filename = get_weights_file_path(config, f"{epoch:02d}")
             model_folder = Path(config.model_folder)

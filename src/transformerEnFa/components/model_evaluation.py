@@ -1,24 +1,11 @@
-import torch
-
-
-
-from transformerEnFa.components.data_transformation import causal_mask
-
-
-from torch.utils.tensorboard import SummaryWriter
-
-
-# Tokenizer imports (Assuming you're using Hugging Face's tokenizers)
-
 
 import torch
 import torch.nn as nn
 from pathlib import Path
+from torch.utils.tensorboard import SummaryWriter
 from tokenizers import Tokenizer
 
-
-
-
+from transformerEnFa.components.data_transformation import causal_mask
 
 
 def greedy_decode(model, source, source_mask, tokenizer_src, tokenizer_tgt, max_len, device):
@@ -89,7 +76,6 @@ def run_validation(model, validation_ds, tokenizer_src, tokenizer_tgt, max_len, 
             print_msg(f"{f'SOURCE: ':>12}{source_text}")
             print_msg(f"{f'TARGET: ':>12}{target_text}")
             print_msg(f"{f'PREDICTED: ':>12}{model_out_text}")
-
             if count == num_examples:
                 print_msg('-'*console_width)
                 break

@@ -95,6 +95,7 @@ class ConfigurationManager:
             model_basename = config.model_basename,
             tensorboard_log_dir = config.tensorboard_log_dir,
             lr = config.lr, 
+            max_len = config.max_len,
             preload = config.preload,
             num_epochs = config.num_epochs,
             
@@ -102,7 +103,7 @@ class ConfigurationManager:
 
         return model_training_config
     
-    
+
     def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config = self.config.model_evaluation
 

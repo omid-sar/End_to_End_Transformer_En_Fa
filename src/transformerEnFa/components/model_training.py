@@ -77,7 +77,7 @@ def train_model(config, train_dataloader, val_dataloader, tokenizer_src, tokeniz
         
                 global_step += 1
 
-            run_validation(model, val_dataloader, tokenizer_src, tokenizer_tgt, 50, device, lambda msg: batch_iterator.write(msg), global_step, writer )
+            run_validation(model, val_dataloader, tokenizer_src, tokenizer_tgt, config.max_len , device, lambda msg: batch_iterator.write(msg), global_step, writer )
             # Save the model at the end of every epoch
             model_filename = get_weights_file_path(config, f"{epoch:02d}")
             model_folder = Path(config.model_folder)

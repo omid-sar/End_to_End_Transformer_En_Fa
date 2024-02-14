@@ -46,6 +46,7 @@ class ModelTrainingConfig:
     model_basename: str
     tensorboard_log_dir: Path
     lr: float
+    max_len: int
     preload: str
     num_epochs: int
 

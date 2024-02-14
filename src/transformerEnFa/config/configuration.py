@@ -5,6 +5,7 @@ from transformerEnFa.entity import DataValidationConfig
 from transformerEnFa.entity import DataTransformationConfig
 from transformerEnFa.entity import ModelConfig
 from transformerEnFa.entity import ModelTrainingConfig
+from transformerEnFa.entity import ModelEvaluationConfig
 
 class ConfigurationManager:
     def __init__(
@@ -100,4 +101,18 @@ class ConfigurationManager:
         )
 
         return model_training_config
+    
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir = config.root_dir,
+    
+            
+        )
+
+        return model_evaluation_config
     

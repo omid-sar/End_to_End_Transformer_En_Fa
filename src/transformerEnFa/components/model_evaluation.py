@@ -1,5 +1,5 @@
 import torch
-from torch.utils.data import DataLoader  # If you're using DataLoader in validation
+
 
 
 from transformerEnFa.components.data_transformation import causal_mask
@@ -7,15 +7,14 @@ from transformerEnFa.components.data_transformation import causal_mask
 
 from torch.utils.tensorboard import SummaryWriter
 
-# Your custom model class needs to be imported if it's defined in a separate file
-from your_model_file_path import YourModelClass
 
 # Tokenizer imports (Assuming you're using Hugging Face's tokenizers)
+
+
+import torch
+import torch.nn as nn
+from pathlib import Path
 from tokenizers import Tokenizer
-
-
-
-
 
 
 

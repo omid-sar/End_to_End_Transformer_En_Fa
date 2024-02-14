@@ -3,6 +3,18 @@ import torch
 
 from transformerEnFa.logging import logger
 
+def get_device():
+    device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
+    logger.info(f"Using device: {device}")
+    if device == 'cuda':
+        logger.info(f"Device name: {torch.cuda.get_device_name(0)}")
+        logger.info(f"Device memory: {torch.cuda.get_device_properties(0).total_memory / 1024 ** 3:.2f} GB")
+    elif device == 'mps':
+        logger.info("Device name: Apple Metal Performance Shaders (MPS)")
+    else:
+        logger.info("NOTE: If you have a GPU, consider using it for training.")
+    return torch.device(device)
+
 
 def get_weights_file_path(config, epoch):
     model_folder = config.model_folder

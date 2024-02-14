@@ -48,3 +48,7 @@ class ModelTrainingConfig:
     lr: float
     preload: str
     num_epochs: int
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path

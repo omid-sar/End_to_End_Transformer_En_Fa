@@ -1,6 +1,7 @@
 import torch
 from pathlib import Path
 from transformerEnFa.utils.common import  create_directories
+from transformerEnFa.utils.model_utils import get_device
 from transformerEnFa.models.transformer import built_transformer
 from transformerEnFa.config.configuration import ConfigurationManager
 from transformerEnFa.utils.model_utils import save_model_summary, save_initial_weights
@@ -16,20 +17,9 @@ class ModelVerificationTrainingPipeline:
 
         self.config_manager = ConfigurationManager()
         self.config = self.config_manager.get_model_config()
-        self.device = self.get_device()
+        self.device = get_device()
        
 
-    def get_device(self):
-        device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
-        logger.info(f"Using device: {device}")
-        if device == 'cuda':
-            logger.info(f"Device name: {torch.cuda.get_device_name(0)}")
-            logger.info(f"Device memory: {torch.cuda.get_device_properties(0).total_memory / 1024 ** 3:.2f} GB")
-        elif device == 'mps':
-            logger.info("Device name: Apple Metal Performance Shaders (MPS)")
-        else:
-            logger.info("NOTE: If you have a GPU, consider using it for training.")
-        return torch.device(device)
 
     def main(self):
         try:
@@ -66,4 +56,5 @@ class ModelVerificationTrainingPipeline:
             device=str(self.device)
         )
         logger.info("Model and device setup complete.")
-        return model, self.device 
+        return model
+    

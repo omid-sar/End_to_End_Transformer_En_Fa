@@ -6,6 +6,7 @@ from transformerEnFa.entity import DataTransformationConfig
 from transformerEnFa.entity import ModelConfig
 from transformerEnFa.entity import ModelTrainingConfig
 from transformerEnFa.entity import ModelEvaluationConfig
+from transformerEnFa.entity import ModelInferenceConfig
 
 class ConfigurationManager:
     def __init__(
@@ -117,3 +118,18 @@ class ConfigurationManager:
 
         return model_evaluation_config
     
+
+    def get_model_inference_config(self) -> ModelInferenceConfig:
+        config = self.config.model_inference
+
+        create_directories([config.root_dir])
+
+        model_inference_config = ModelInferenceConfig(
+            root_dir = config.root_dir,
+    
+            
+        )
+
+        return model_inference_config
+    
+

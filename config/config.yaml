@@ -47,4 +47,7 @@ model_training:
 model_evaluation:
   root_dir: artifacts/model_evaluation
 
+model_inference:
+root_dir: artifacts/model_inference
+
 

@@ -53,3 +53,7 @@ class ModelTrainingConfig:
 @dataclass(frozen=True)
 class ModelEvaluationConfig:
     root_dir: Path
+
+@dataclass(frozen=True)
+class ModelInferenceConfig:
+    root_dir: Path

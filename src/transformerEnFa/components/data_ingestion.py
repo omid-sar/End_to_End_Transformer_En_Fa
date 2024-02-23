@@ -14,7 +14,7 @@ class DataIngestion:
     def download_file(self):
         dataset_path = Path(self.config.local_data_file)
         if not dataset_path.exists():
-            dataset = load_dataset(self.config.dataset_name, split='train[:5%]')
+            dataset = load_dataset(self.config.dataset_name, split='train[:2%]')
             dataset.save_to_disk(dataset_path)  
             logger.info(f"{self.config.dataset_name} downloaded and saved to {dataset_path}!")
         else:

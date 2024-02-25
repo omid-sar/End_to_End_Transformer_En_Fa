@@ -86,7 +86,7 @@ jobs:
 
       - name: Stop and remove container if running
         run: |
-          docker ps -q --filter "name=texts" | grep -q . && docker stop texts && docker rm -fv texts
+          docker ps -q --filter "transformer_en_fa" | grep -q . && docker stop texts && docker rm -fv texts
 
       - name: Run Docker Image to serve users
         run: |

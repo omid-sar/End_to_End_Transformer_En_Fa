@@ -91,3 +91,4 @@ target/
 artifacts/*
 logs/*
 access_keys/*
+flagged/*

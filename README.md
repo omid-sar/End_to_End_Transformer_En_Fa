@@ -123,4 +123,3 @@ This guide provides a comprehensive walkthrough for deploying a Dockerized appli
 3. **Launch EC2 Instance**: Ensure it has Docker installed.
 4. **Pull Docker Image on EC2**: Use AWS CLI.
 5. **Run Docker Container on EC2**: Start your application.
-```

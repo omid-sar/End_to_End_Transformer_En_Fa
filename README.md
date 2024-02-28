@@ -97,9 +97,6 @@ This guide provides a comprehensive walkthrough for deploying a Dockerized appli
        sudo usermod -aG docker ubuntu
        ```
        ```bash
-       sudo usermod -aG docker ubuntu
-       ```
-       ```bash
        newgrp docker
        ```
 

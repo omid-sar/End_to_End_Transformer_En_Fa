@@ -1,4 +1,7 @@
-# Project Overview
+# MLOPS English to Farsi Translation & Cloud Deployment & CI/CD pipeline 
+
+
+## Overview
 
 This project showcases an advanced machine learning pipeline for translating English to Farsi, demonstrating cutting-edge MLOps practices, including model development from scratch in PyTorch, automated workflows, and cloud deployment.
 
